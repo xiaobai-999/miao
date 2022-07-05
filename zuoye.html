@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>lorem</h1>
+    <h2>Lorem,ipsum.</h2>
+    <h3>Lorem, ipsum dolor.</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam porro
+      adipisci unde optio sit maxime nihil mollitia consequuntur, enim dolorem
+      explicabo accusantium? Optio nulla atque, ducimus illo aliquam a vitae?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere,
+      reprehenderit error consequuntur saepe dolorem dolores molestias esse
+      numquam vero repudiandae ab aliquid nam dignissimos nisi consequatur
+      voluptas veritatis dolor quisquam!
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quasi?</p>
+    <a href="https://www.jd.com/" target="_blank">新窗口打开京东</a>
+    <a href="mailto:mao@qq.com?title=1&subject=2&content=3">点我发邮件</a>
+    <a href="#btm">跳转到页面底部</a>
+    <a href="stock-photo-229389427.jpg" download="水果.jpg">点我下载文件</a>
+    <br />
+    <img src="stock-photo-229389427.jpg" style="width: 200px" />
+    <hr />
+    <hr />
+    <marquee behavior="" direction="">piao</marquee>
+    <i>这几种强调</i><b>有什么 </b><strong>区别？</strong> <u>这个？</u
+    ><i>这个？</i>
+    <p>&lt-- 这段注释需要出现在页面里面 --&gt</p>
+    <pre>
+      function a() {
+        return 8
+      }
+    </pre>
+    <hr />
+    <ul>
+      <li>
+        小学
+        <ol>
+          <li>
+            一年级
+            <ol>
+              <li>上学期</li>
+              <li>下学期</li>
+            </ol>
+          </li>
+          <li>二年级</li>
+          <li>三年级</li>
+        </ol>
+      </li>
+      <li>中学</li>
+      <li>大学</li>
+    </ul>
+    <hr />
+      <dl>
+        <dt>班级</dt>
+          <dd>三年二班</dd>
+        <dt>老师</dt>
+          <dd>张老师</dl>
+          <dd>李老师</dd>
+          <dd>王老师</dd>
+        <dt>学生</dt>
+          <dd>小明</dd>
+          <dd>豆豆</dd>
+      </dl>
+    <hr>
+     <h1>Google搜索</h1>
+     <form  action="https://www.baidu.com/s">
+      <input type="text" name="wd">&nbsp;
+      <input type="submit" value="查询" >
+      <!-- 路径要写全，带上http -->
+     </form>
+     <!-- <form method="get" action="https://www.baidu.com/s">
+      <input type="text" class="" name="wd" placeholder="搜索">
+      <input type="submit" class="" value="搜索">
+  </form> -->
+     <hr>
+     个人信息调查表
+
+     <form action="" method="post">
+        <br>
+        性别<br>
+        <label>
+          <input type="radio" name="sex" value="male">男
+        </label><label>
+          <input type="radio"  name="sex" value="female">女
+        </label>
+        <br>
+        年龄<br>
+        <select>
+          <option selected hidden>请选择</option>
+          <optgroup label="少年" selected>
+            <option> 1-6岁 </option>
+            <option>6-12岁</option>
+          </optgroup>
+          <optgroup label="青年" selected>
+            <option> 12-18岁 </option>
+            <option>18-24岁</option>
+          </optgroup>
+          <optgroup label="少年" selected>
+            <option> 1-6岁 </option>
+            <option>6-1岁</option>
+          </optgroup>
+        </select>
+        <br>
+        生日<br>
+        <input type="date" >
+        <br>
+        生辰<br>
+        <input type="time" >
+        <br>
+        照片<br>
+        <input type="file" name="avatar" accept="image/*">
+        <br>
+        自我介绍<br>
+        <textarea name="text" cols="20" rows="6">介绍一下自己</textarea>
+        <br>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+     </form>
+     <br>
+      <fieldset disabled id="btm">
+        <legend>这里全部禁用了</legend>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </fieldset>
+  </body>
+</html>
