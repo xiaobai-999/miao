@@ -7,39 +7,42 @@
   <title>Document</title>
   <style>
     html{
-      width: 100%;
       height: 100%;
     }
     body{
       margin: 0;
-      box-sizing: border-box;
-      width: 100%;
       height: 100%;
+      box-sizing: border-box;
     }
     .main{
       height: 100%;
       width: 100%;
+      min-width: 600px;
+      position: relative;
     }
     .header{
       width: 100%;
-      height: 15%;
+      height: 100px;
       background-color: rgb(95,158,160);
     }
     .left{
-      width: 15%;
-      height:85%;
       overflow: auto;
       background-color: rgb(160,82,45);
-      position:relative;
+      position:absolute;
+      top:100px;
+      bottom: 0;
+      left: 0;
+      width: 200px;
     }
     .right{
       position:absolute;
       display: inline-block;
-      top: 15%;
-      left: 15%;
-      width: 85%;
-      height:85%;
+      top: 100px;
+      right: 0;
+      left: 200px;
+      bottom: 0;
       background-color: rgb(73,154,189);
+      overflow: auto;
     }
   </style>
 </head>

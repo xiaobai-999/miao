@@ -3,120 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=s, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
     body{
       margin: 0;
-      background-color: black;
+      padding: 0;
     }
-    .main{
-      background-color: rgb(34,31,34);
-      color: rgb(64,63,65);
-      width: 100%;
-      height: 40px;
-      min-width: 800px;
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
-    div{
+    .menu>li{
       display: inline-block;
-      position:relative;
-      font-size: 16px;
-      margin-right: 20px;
-      line-height:20px;
-      vertical-align:middle;
     }
-    div:hover:NOT(:first-child){
-      background-color: rgb(51,50,52);
-      border-radius: 5%;
-      padding: 3px 5px;
+    .menu li{
+      position: relative;
+      white-space:nowrap;
     }
-    .icon{
-      width: 40px;
-      height: 40px;
-    }
-    .down1{
+    .menu ul{
+      position:absolute;
+      top: 100%;
+      left: 0;
       display: none;
-      position: absolute;
-      min-width: 160px;
-      left: -1px;
-      top: 27px;
-      background-color: rgb(51,50,52);
-      color: rgb(79, 78, 81);
-      white-space: nowrap;
     }
-    .menu1:hover>.down1{
+    .menu ul ul{
+      top: 0;
+      left: 100%;
+    }
+    .menu li:hover>ul{
       display: block;
     }
-    p:hover{
-      color: rgb(247, 233, 85);
+    .empty{
+      border-top: 1px solid;
     }
-    .down11{
-      display: none;
-      position: absolute;
-      min-width: 160px;
-      margin-top: -37px;
-      margin-left: 158px;
-      padding-right: 20px;
-      background-color: rgb(51,50,52);
-      color: rgb(64,63,65);
-      white-space: nowrap;
+    .menu li li{
+      padding: 0 100px 0 10px;
     }
-    .p1{
-      display: inline-block;
-      position:relative;
-      min-width: 160px;
-      border-top: 1px solid rgba(68, 65, 65, 0.758);
-      padding-top: 13px;
-      padding-left: 15px;
-    }
-    .p1:hover>.down11{
-      display: block;
-    }
-    p{
-      padding-left: 15px;
-      overflow: auto;
-    }
-    .icon1{
-      color: rgb(64,63,65);
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      position: absolute;
+    .menu li li>span{
+      position:absolute;
       right: 0;
+      top: 0;
     }
   </style>
 </head>
 <body>
-  <section class="main">
-    <div>
-      <svg t="1657873403767" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1803" width="200" height="200"><path d="M746.222933 102.239573l-359.799466 330.820267L185.347413 281.4976 102.2464 329.864533l198.20544 182.132054-198.20544 182.132053 83.101013 48.510293 201.076054-151.558826 359.799466 330.676906 175.527254-85.251413V187.4944z m0 217.57952v384.341334l-255.040853-192.177494z" fill="#29A1F1" p-id="1804"></path></svg>
-    </div>
-    <div class="menu1">
-      <span>文件(F)</span>
-       <aside class="down1">
-        <p>新建文件</p>
-        <p>新建文件</p>
-        <p>新建文件</p>
-        <p>错误文件</p>
-        <p>新建文件</p>
-        <span class="p1">打开最近的文件
-          <svg t="1657969943586" class="icon1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1724" width="200" height="200"><path d="M682.666667 533.333333a21.333333 21.333333 0 0 1-15.146667-6.186666l-298.666667-298.666667a21.333333 21.333333 0 0 1 30.293334-30.293333l298.666666 298.666666a21.333333 21.333333 0 0 1 0 30.293334A21.333333 21.333333 0 0 1 682.666667 533.333333z" fill="#bfbfbf" p-id="1725"></path><path d="M384 832a21.333333 21.333333 0 0 1-15.146667-6.186667 21.333333 21.333333 0 0 1 0-30.293333l298.666667-298.666667a21.333333 21.333333 0 0 1 30.293333 30.293334l-298.666666 298.666666A21.333333 21.333333 0 0 1 384 832z" fill="#bfbfbf" p-id="1726"></path></svg>
-          <aside class="down11">
-            <p>重新打开最近已经关闭的编辑器</p>
-          </aside>
-        </span>
-        <p>打开文件</p>
-        <p>打开文件夹</p>
-        <p>从文件夹打开工作区</p>
-       </aside>
-    </div>
-    <div>编辑(E)</div>
-    <div>选择(S)</div>
-    <div>查看(V)</div>
-    <div>转到(G)</div>
-    <div>运行(R)</div>
-    <div>终端(T)</div>
-    <div>帮助(H)</div>
-  </section>
+<div>
+  <ul class="menu">
+    <li>文件
+      <ul>
+        <li>新建文件
+          <span>ctrl+N</span>
+        </li>
+        <li>新建文本文件</li>
+        <li>新建窗口
+          <span>></span>
+           <ul>
+            <li>打开最近文件</li>
+            <li>打开最近删除文件</li>
+            <li>打开不同文件
+              <span>></span>
+              <ul>
+                <li>新建文件</li>
+                <li>新建文本文件</li>
+                <li>新建窗口</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="empty"></li>
+        <li>测试</li>
+        <li>测试</li>
+        <li>测试</li>
+        <li class="empty"></li>
+        <li>测试</li>
+        <li>测试</li>
+        <li>测试</li>
+      </ul>
+    </li>
+    <li>编辑</li>
+    <li>选择</li>
+    <li>查看</li>
+    <li>转到</li>
+    <li>运行</li>
+    <li>终端</li>
+    <li>帮助</li>
+  </ul>
+</div>
 </body>
 </html>
