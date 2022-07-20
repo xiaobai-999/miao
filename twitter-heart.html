@@ -14,7 +14,7 @@
       height: 100%;
       min-width: 300px;
     }
-    .icon{
+    /* .icon{
       background-image: url(http://127.0.0.1:8080/img/DZ.png);
       height: 100px;
       width: 100px;
@@ -26,12 +26,31 @@
     div:focus{
       background-position: -2400px 0px;
       transition: 1s steps(24);
+    } */
+    .tip2{
+      display: none;
     }
-
+    input + label{
+      margin-left: 500px;
+      width: 100px;
+      height: 100px;
+      border: 5px solid;
+      background-image: url(http://127.0.0.1:8080/img/DZ.png);
+      display: inline-block;
+      /* 为了实现点击框体也能出现动态效果，所以用加号连接选择器。因为lable是行内元素，所以宽和高不起作用，因此转换为行内块元素 */
+    }
+    input:checked + label{
+      /* 这里写的是checkd 不是hover和active */
+      background-position: -2800px 0px;
+      /* transition: 0.4666s linear; 0.4666：先使用1000ms除以屏幕刷新率，然后乘以要显示的图片有多少，在乘上图片的数目，得到的是ms，要换成s则除以1000 */
+      transition: 1s steps(28);
+    }
   </style>
 </head>
 <body>
 <div class="icon" tabindex="0" >
 </div>
+<input type="checkbox" id="tip1" class="tip2">
+<label for="tip1"></label>
 </body>
 </html>
