@@ -50,7 +50,7 @@
     article:hover{
       background-color: red;
     }
-    aside{
+    .main_1 aside{
       display: inline-block;
       border: 3px solid;
       background-color:rgb(255, 192, 203);
@@ -62,7 +62,7 @@
       text-align: center;
       line-height: 34px;
     }
-    aside:nth-child(3n+3){
+    .main_1 aside:nth-child(3n+3){
       margin-right: 0px;
     }
     ul{
@@ -84,6 +84,23 @@
       margin: auto;
       text-align: center;
     }
+    .main2{
+      display: flex;
+      flex-wrap: wrap;
+      gap:15px 30px;
+      margin-top: 20px;
+    }
+    .main2 aside{
+      border: 3px solid;
+      width: 174px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      background-color:rgb(255, 192, 203);
+    }
+    .main2 aside:hover{
+      background-color:red;
+    }
   </style>
 </head>
 <body>
@@ -97,6 +114,23 @@
       页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
     </p>
       <div>
+        <div class="main2">
+          <aside>宽180高40(包含边框)</aside>
+          <aside>水平间隙30px</aside>
+          <aside>垂直间隙15px</aside>
+          <aside>边框宽度3px</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+          <aside>产品</aside>
+        </div>
+          <br>
+          <hr>
+          <br>
         <div class="main_1">
           <aside>宽180高40(包含边框)</aside>
           <aside>水平间隙30px</aside>
