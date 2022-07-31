@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    div{
+        width: 300px;
+        height: 300px;
+        border: 1px solid;
+        margin-bottom: 50px;
+        margin-left: 50px;
+    }
+    aside{
+        width: 40px;
+        height: 40px;
+        background-color: black;
+    }
+    .a1{
+      margin: auto;
+      margin-top: 130px;
+    }
+    .main2{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main3{
+        position: relative;
+        /* 这种居中方式采用的是流体自适应居中，将left/top/bottom/right四个属性都设置为0表示子模块相对于四条边的偏移量都是零，这时再放进去一个margin:auto;，在满足前边四个属性的条件下进行margin的auto布局，就可以实现垂直居中。 */
+    }
+    .a3{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .main4{
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .a4{
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<p>常规流</p>
+<div class="main1">
+  <aside class="a1"></aside>
+</div>
+<p>flex</p>
+<div class="main2">
+  <aside class="a2"></aside>
+</div>
+<p>定位父向子绝</p>
+<div class="main3">
+  <aside class="a3"></aside>
+</div>
+<span>table</span>
+<div class="main4">
+  <aside class="a4"></aside>
+</div>
+</body>
+</html>
