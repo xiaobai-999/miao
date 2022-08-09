@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    @keyframes turn {
+      from{
+        transform: rotate3d(1,1,0,0deg);
+      }
+      to{
+        transform:rotate3d(1,1,0,360deg);
+      }
+    }
+    div{
+      width: 300px;
+      height:300px;
+      position: absolute;
+    }
+    aside{
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      top:300px;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: turn 3s linear infinite;
+
+    }
+    .items1{
+      background-color: #FAEBD7;
+      transform-origin: right;
+      transform: rotateY(90deg);
+    }
+    .items2{
+      background-color: #000000;
+      transform-origin:left;
+      transform: rotatey(-90deg);
+    }
+    .items3{
+      background-color: #0000FF;
+    }
+    .items4{
+      background-color: #8A2BE2;
+      transform-origin: top;
+      transform: rotateX(90deg);
+    }
+    .items5{
+      background-color: #DC143C;
+      transform-origin: bottom;
+      transform:rotateX(-90deg);
+    }
+    .items6{
+      background-color: #FF8C00;
+      transform:translateZ(300px);
+    }
+  </style>
+</head>
+<body>
+
+    <aside>
+      <div class="items1"></div>
+      <div class="items2"></div>
+      <div class="items3"></div>
+      <div class="items4"></div>
+      <div class="items5"></div>
+      <div class="items6"></div>
+    </aside>
+</body>
+</html>
