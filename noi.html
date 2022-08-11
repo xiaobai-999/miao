@@ -868,7 +868,7 @@
     console.log("NO");
   }
 </script>
-<script type="x" id="ch0105/31">  //输出方式有问题答案正确
+<script type="" id="ch0105/31">  //输出方式有问题答案正确
   let n = Number(prompt());
   let m = Number(prompt());
   let array=[];
@@ -886,12 +886,14 @@
       }
     }
   }
-
+  let array1 = [];
+  let k =0;
    for(let i=0;i<n;i++){
     if(array[i]===0){
-      console.log(i+1);
+      array1[k++]=i+1;
     }
    }
+   console.log(array1);
 </script>
 <script type="x" id="ch0105/32">
   let n = Number(prompt());
