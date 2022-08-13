@@ -964,11 +964,9 @@
   let M = Number(prompt());
   let N = Number(prompt());
   let X = Number(prompt()); //当战斗力上限等于体力加一
-  for(let i =0;i<X;i++ ){
-    N = N + parseInt(M/N);
-    if(N>M){
-      break;
-    }
+  while(M<=N&&M<=N*X){
+    X-=Math.ceil(M/N);
+    N+=Math.ceil(M/N);
   }
   console.log(N);
 </script>

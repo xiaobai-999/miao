@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="400"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条实线
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+         'rgb(255,255,0)'
+         '#ff00ff'
+        如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  // YOUR CODE GOES BELOW
+  dot(42, 42)
+  for(let y=42;y<80;y++){
+    dot(44, y)
+  }
+  for(let y= 42;y<80;y+=2){
+    dot(46, y)
+  }
+  for(let y= 42;y<80;y+=4){
+    dot(48, y)
+  }
+  for(let y= 42;y<80;y++){
+    if((y%10)%5!=0&&(y%10)%6!=0){
+      dot(50, y)
+    }
+  }
+  for(let x= 52;x<80;x++){
+    dot(x, x) //45°
+  }
+  for(let y= 52;y<80;y++){
+    dot(y*1.7,y);
+  }
+  for(let x=0;x<=500;x++){
+    dot(x,x*0.8)
+  }
+  for(let x=50;x<150;x++){
+    for(let y=230;y<260;y++){
+     dot(x, y) //实心矩形
+    }
+  }
+  for(let x=130;x<200;x++){
+    for(let y=300;y<390;y++){
+        if(y<301||y>388){     //空心矩形
+          dot(x, y)
+        }
+        if(x<131||x>198){
+          dot(x, y)
+        }
+    }
+  }
+  for(let z=1;z<=360;z++){
+    var pos = z * Math.PI/180;
+    dot(250+50*Math.sin(pos),200+50*Math.cos(pos));
+  }
+  for(let z=1;z<=360;z++){
+    var pos = z * Math.PI/180;
+    dot(250+200*Math.sin(pos),200+200*Math.cos(pos));
+  }
+  function dot1(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 2, 2)
+  }
+  for(let x=1;x<101;x+=1){
+    for(let z=1;z<=360;z+=1){
+    var pos = z * Math.PI/180;
+      dot1(370+x*Math.sin(pos),100+x*Math.cos(pos));  //实心圆
+    }
+  }
+  let y=100;
+  for(let x=60;x<130;x++){
+      dot(x,10+Math.sin(x+y));
+  }
+  for(let x=1;x<101;x++){
+    for(let y=300;y<401;y++){
+        dot(x, y,color ='rgb(' + Math.floor(255-2.55*x) + ','+Math.floor(255-2.55*(y-299))+','+Math.floor(255-2.55*(y-299))+')');
+    }
+  }
+
+</script>
+</html>
