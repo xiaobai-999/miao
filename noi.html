@@ -355,14 +355,18 @@
    var x = Number(prompt());
    var y = Number(prompt());
    var i = prompt();
-   if(i === "+"){
+   if (i === "+") {
      console.log(x+y);
-   }else if(i === "-"){
+   } else if (i === "-") {
      console.log(x-y);
-   }else if(i === "*"){
+   } else if (i === "*") {
      console.log(x*y);
-   }else if(i === "/"){
-     console.log(x/y);
+   } else if (i === "/") {
+    if(y !== 0){
+      console.log(x/y);
+    } else {
+      console.log("Divided by zero!");
+    }
    }else{
      console.log("Invalid operator!");
    }
@@ -658,49 +662,61 @@
 
 <script type="x" id="ch0105/20">
   var h = Number(prompt());
+
   var sum = h;
-  for(var i = 0;i<9;i++){
-    h = h *0.5;
-    sum +=h*2;  //每次弹起来会成为第二次下落得高度
+  for(var i = 0; i < 9; i++){
+    h = h * 0.5;
+    sum += h * 2;  //每次弹起来会成为第二次下落得高度
   }
-  h = h *0.5;  //最后一次弹起来得高度
+  h = h * 0.5;  //最后一次弹起来得高度
   console.log(sum.toFixed(4));
   console.log(h.toFixed(7));
 </script>
 
-<script type="x" id="ch0105/21">
+<script type="X" id="ch0105/21">
   var n = Number(prompt());
-  var pos = 1;
-  if(n%2!=0){
-    for(var i = 0;i<=999;i++ ){
-      if(pos===1){
-        console.log(`${n}*3+1=${n*3 + 1}`);
-        n = n*3 + 1;
-        pos=0;
-      }
-      console.log(`${n}/2=${n/2}`);
-      n = n/2;
-      if(n===1){
-        console.log("End");
-        break;
-      }
-    }
-  }else{
-    n=n/2;
-    for(var i = 0;i<=999;i++ ){
-      if(pos===1){
-        console.log(`${n}*3+1=${n*3 + 1}`);
-        n = n*3 + 1;
-        pos=0;
-      }
-      console.log(`${n}/2=${n/2}`);
-      n = n/2;
-      if(n===1){
-        console.log("End");
-        break;
-      }
+  while (n !== 1) {
+    if(n%2 === 1){
+      console.log(n + '*3+1=' + (n=n*3+1));
+    } else if (n%2===0) {
+      console.log(n + '/2=' + (n=n/2));
     }
   }
+  if (n === 1) {
+     console.log("End");
+  }
+
+  // var pos = 1;
+  // if(n%2!=0){
+  //   for(var i = 0;i<=999;i++ ){
+  //     if(pos===1){
+  //       console.log(`${n}*3+1=${n*3 + 1}`);
+  //       n = n*3 + 1;
+  //       pos=0;
+  //     }
+  //     console.log(`${n}/2=${n/2}`);
+  //     n = n/2;
+  //     if(n===1){
+  //       console.log("End");
+  //       break;
+  //     }
+  //   }
+  // }else{
+  //   n=n/2;
+  //   for(var i = 0;i<=999;i++ ){
+  //     if(pos===1){
+  //       console.log(`${n}*3+1=${n*3 + 1}`);
+  //       n = n*3 + 1;
+  //       pos=0;
+  //     }
+  //     console.log(`${n}/2=${n/2}`);
+  //     n = n/2;
+  //     if(n===1){
+  //       console.log("End");
+  //       break;
+  //     }
+  //   }
+  // }
 </script>
 <script  type="x" id="ch0105/22">
   let array = [];
@@ -766,7 +782,6 @@
   n=n*2;
   for(let i =0;i<n;i++){
     array[i]=+prompt();
-    //console.log(array[i]);
   }
   for(let i=0;i<n;i=i+2){
     // console.log(array[i],array[i+1]);
@@ -868,7 +883,7 @@
     console.log("NO");
   }
 </script>
-<script type="" id="ch0105/31">  //输出方式有问题答案正确
+<script type="x" id="ch0105/31">
   let n = Number(prompt());
   let m = Number(prompt());
   let array=[];
@@ -964,9 +979,9 @@
   let M = Number(prompt());
   let N = Number(prompt());
   let X = Number(prompt()); //当战斗力上限等于体力加一
-  while(M<=N&&M<=N*X){
-    X-=Math.ceil(M/N);
-    N+=Math.ceil(M/N);
+  while (N <= M && M <= N * X){
+    X -= Math.ceil( M / N);
+    N += Math.ceil( M / N );
   }
   console.log(N);
 </script>
@@ -1253,7 +1268,7 @@
   console.log(a1*b1/a); //最小公倍数等于a*b/最大公约数
 </script>
 <script type="x" id="sqrt">
-  let n = Number(prompt()); //二分法
+  let n = Number(prompt()); //二分法，原理是n/2 > sqrt(2)?
   let high = (n/2)+1;
   let low = 0;
   let mid = 0;

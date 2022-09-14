@@ -110,6 +110,7 @@
     var pos = z * Math.PI/180;
     dot(250+200*Math.sin(pos),200+200*Math.cos(pos));
   }
+
   function dot1(x, y, color = 'black') {
     x = Math.round(x)
     y = Math.round(y)
@@ -122,9 +123,10 @@
       dot1(370+x*Math.sin(pos),100+x*Math.cos(pos));  //实心圆
     }
   }
-  let y=100;
-  for(let x=60;x<130;x++){
-      dot(x,10+Math.sin(x+y));
+
+  for(let x=60;x<330;x+=1){
+      var y = 10+8 * Math.sin(x / 8)
+      dot(x,y);
   }
   for(let x=1;x<101;x++){
     for(let y=300;y<401;y++){
