@@ -103,7 +103,19 @@
       }
       return res
     },
-    flattenDeep() {
-
+    flattenDeep(array) {
+      let res = []
+      for (let i = 0; i < array.length; i++) {
+        const pos = array[i];
+        if (Array.isArray(pos)) {
+          for (let j = 0; j < pos.length; j++) {
+            const pos1 = pos[j];
+            res.push(pos1)
+          }
+        } else {
+          res.push(pos)
+        }
+      }
+      return res
     },
   }
